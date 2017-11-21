@@ -18,8 +18,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/passport', function ()
+{
+    return view('passport_components');
+})->name('passport')->middleware('auth');
 
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index');
