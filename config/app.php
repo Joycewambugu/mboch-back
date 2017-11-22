@@ -173,6 +173,7 @@ return [
         \InfyOm\Generator\InfyOmGeneratorServiceProvider::class,
         \InfyOm\AdminLTETemplates\AdminLTETemplatesServiceProvider::class,
         Yajra\DataTables\DataTablesServiceProvider::class,
+        Jlapp\Swaggervel\SwaggervelServiceProvider::class,
 
         /*
          * Application Service Providers...
