@@ -180,4 +180,6 @@ return [
     */
     'ignore_model_prefix' => false,
 
+    'add_on.tests' => true
+
 ];
