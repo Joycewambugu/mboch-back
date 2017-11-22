@@ -13,6 +13,7 @@
         "infyomlabs/laravel-generator": "5.5.x-dev",
         "infyomlabs/swagger-generator": "dev-master",
         "jlapp/swaggervel": "dev-master",
+        "laravel/browser-kit-testing": "^2.0",
         "laravel/framework": "5.5.*",
         "laravel/passport": "^4.0",
         "laravel/tinker": "~1.0",
@@ -37,12 +38,12 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "Tests\\": "tests/",
+            "Tests\\Traits\\": "tests/traits/"
         },
         "classmap": [
-            "tests/TestCase.php",
-            "tests/ApiTestTrait.php",
-            "tests/traits"
+            "tests/traits",
+            "tests"
         ]
     },
     "extra": {
