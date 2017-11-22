@@ -22,3 +22,6 @@ Route::get('/passport', function ()
 {
     return view('passport_components');
 })->name('passport')->middleware('auth');
+
+
+Route::resource('subscriptionPlans', 'SubscriptionPlanController');
