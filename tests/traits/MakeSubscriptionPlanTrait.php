@@ -1,5 +1,5 @@
 <?php
-namespace tests\traits;
+
 use Faker\Factory as Faker;
 use App\Models\SubscriptionPlan;
 use App\Repositories\SubscriptionPlanRepository;

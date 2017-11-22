@@ -3,6 +3,7 @@
 use App\Models\SubscriptionPlan;
 use App\Repositories\SubscriptionPlanRepository;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Tests\TestCase;
 
 class SubscriptionPlanRepositoryTest extends TestCase
 {
