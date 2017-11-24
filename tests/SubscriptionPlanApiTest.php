@@ -14,7 +14,7 @@ class SubscriptionPlanApiTest extends TestCase
     public function testCreateSubscriptionPlan()
     {
         $subscriptionPlan = $this->fakeSubscriptionPlanData();
-        $this->json('POST', '/api/v1/subscriptionPlans', $subscriptionPlan);
+        $this->response = $this->json('POST', '/api/v1/subscriptionPlans', $subscriptionPlan);
 
         $this->assertApiResponse($subscriptionPlan);
     }
@@ -25,7 +25,7 @@ class SubscriptionPlanApiTest extends TestCase
     public function testReadSubscriptionPlan()
     {
         $subscriptionPlan = $this->makeSubscriptionPlan();
-        $this->json('GET', '/api/v1/subscriptionPlans/'.$subscriptionPlan->id);
+        $this->response = $this->json('GET', '/api/v1/subscriptionPlans/' . $subscriptionPlan->id);
 
         $this->assertApiResponse($subscriptionPlan->toArray());
     }
@@ -38,7 +38,7 @@ class SubscriptionPlanApiTest extends TestCase
         $subscriptionPlan = $this->makeSubscriptionPlan();
         $editedSubscriptionPlan = $this->fakeSubscriptionPlanData();
 
-        $this->json('PUT', '/api/v1/subscriptionPlans/'.$subscriptionPlan->id, $editedSubscriptionPlan);
+        $this->response = $this->json('PUT', '/api/v1/subscriptionPlans/' . $subscriptionPlan->id, $editedSubscriptionPlan);
 
         $this->assertApiResponse($editedSubscriptionPlan);
     }
@@ -49,11 +49,11 @@ class SubscriptionPlanApiTest extends TestCase
     public function testDeleteSubscriptionPlan()
     {
         $subscriptionPlan = $this->makeSubscriptionPlan();
-        $this->json('DELETE', '/api/v1/subscriptionPlans/'.$subscriptionPlan->id);
+        $this->response = $this->json('DELETE', '/api/v1/subscriptionPlans/' . $subscriptionPlan->id);
 
         $this->assertApiSuccess();
-        $this->json('GET', '/api/v1/subscriptionPlans/'.$subscriptionPlan->id);
+        $this->response = $this->json('GET', '/api/v1/subscriptionPlans/' . $subscriptionPlan->id);
 
-        $this->assertResponseStatus(404);
+        $this->response->assertStatus(404);
     }
 }
