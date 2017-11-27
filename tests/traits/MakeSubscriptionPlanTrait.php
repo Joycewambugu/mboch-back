@@ -45,9 +45,7 @@ trait MakeSubscriptionPlanTrait
             'name' => $fake->word,
             'description' => $fake->text,
             'price' => $fake->randomDigitNotNull,
-            'search_limit' => $fake->randomDigitNotNull,
-//            'created_at' => $fake->word,
-//            'updated_at' => $fake->word
+            'search_limit' => $fake->randomDigitNotNull
         ], $subscriptionPlanFields);
     }
 }
