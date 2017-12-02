@@ -68,18 +68,18 @@ class JobSeekerDataTable extends DataTable
             'email',
             'phone',
             'date_of_birth',
-            'gender',
+            // 'gender',
             'education_level',
             'tribe',
-            'photo',
-            'national_id',
-            'experience_years',
-            'spoken_languages',
-            'religion',
+            // 'photo',
+            // 'national_id',
+            // 'experience_years',
+            // 'spoken_languages',
+            // 'religion',
             'employment_status',
-            'marital_status',
-            'max_children',
-            'health_conditions'
+            // 'marital_status',
+            // 'max_children',
+            // 'health_con'ditions'
         ];
     }
 
