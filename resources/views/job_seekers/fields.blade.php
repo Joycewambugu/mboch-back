@@ -10,6 +10,12 @@
     {!! Form::email('email', null, ['class' => 'form-control']) !!}
 </div>
 
+<!-- Phone Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('phone', 'Phone:') !!}
+    {!! Form::tel('phone', null, ['class' => 'form-control']) !!}
+</div>
+
 <!-- Date Of Birth Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('date_of_birth', 'Date Of Birth:') !!}
