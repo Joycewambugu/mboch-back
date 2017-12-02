@@ -44,7 +44,8 @@
         "classmap": [
             "tests/TestCase.php",
             "tests/ApiTestTrait.php",
-            "tests/traits"
+            "tests/traits",
+            "tests"
         ]
     },
     "extra": {
