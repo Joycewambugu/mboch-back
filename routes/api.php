@@ -19,3 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::apiResource('subscriptionPlans', 'API\SubscriptionPlanAPIController');
+
+Route::resource('jobSeekers', 'API\JobSeekerAPIController');

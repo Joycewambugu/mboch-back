@@ -25,3 +25,9 @@ Route::get('/passport', function ()
 
 
 Route::resource('subscriptionPlans', 'SubscriptionPlanController');
+
+
+
+
+
+Route::resource('jobSeekers', 'JobSeekerController');
