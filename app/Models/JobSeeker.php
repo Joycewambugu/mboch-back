@@ -150,7 +150,7 @@ class JobSeeker extends Model
         'name' => 'string',
         'email' => 'string',
         'phone' => 'string',
-        'date_of_birth' => 'date',
+        // 'date_of_birth' => 'date',
         'gender' => 'string',
         'education_level' => 'string',
         'tribe' => 'string',

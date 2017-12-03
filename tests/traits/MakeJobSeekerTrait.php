@@ -44,7 +44,7 @@ trait MakeJobSeekerTrait
             'name' => $fake->word,
             'email' => $fake->word,
             'phone' => $fake->word,
-            'date_of_birth' => $fake->date("Y-m-d 00:00:00"),
+            'date_of_birth' => $fake->date,
             'gender' => $fake->word,
             'education_level' => $fake->word,
             'tribe' => $fake->word,
