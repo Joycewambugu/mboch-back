@@ -22,8 +22,15 @@
     {!! Form::date('date_of_birth', null, ['class' => 'form-control']) !!}
 </div>
 
+<!-- Photo Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('photo', 'Photo:') !!}
+    {!! Form::file('photo') !!}
+</div>
+
+
 <!-- Gender Field -->
-<div class="form-group col-sm-12">
+<div class="form-group col-sm-6">
     {!! Form::label('gender', 'Gender:') !!}
     <label class="radio-inline">
         {!! Form::radio('gender', "male", null) !!} male
@@ -46,13 +53,6 @@
     {!! Form::label('tribe', 'Tribe:') !!}
     {!! Form::text('tribe', null, ['class' => 'form-control']) !!}
 </div>
-
-<!-- Photo Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('photo', 'Photo:') !!}
-    {!! Form::file('photo') !!}
-</div>
-<div class="clearfix"></div>
 
 <!-- National Id Field -->
 <div class="form-group col-sm-6">
