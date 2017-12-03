@@ -26,6 +26,7 @@ class JobSeekerRepository extends BaseRepository
         'date_of_birth',
         'gender',
         'education_level',
+        'current_location',
         'tribe',
         'photo',
         'national_id',

@@ -6,12 +6,12 @@
             </div>
             <div class="col-sm-6 col-md-8">
                 <h2>{!! $jobSeeker->name !!}</h2>
+                <small><cite title="{!! $jobSeeker->current_location !!}">{!! $jobSeeker->current_location !!} <i class="glyphicon glyphicon-map-marker">
+                </i></cite></small>
                 
                 <div class="row">
                     <div class="col col-md-6">
                     <i class="fa fa-user"></i> <strong> {!! $jobSeeker->gender !!}, {!! $jobSeeker->age() !!}</strong><br>
-                <small><cite title="{!! $jobSeeker->current_location !!}">{!! $jobSeeker->current_location !!} <i class="glyphicon glyphicon-map-marker">
-                </i></cite></small><br>
                 <i class="fa fa-briefcase"></i> <strong> {!! $jobSeeker->experience_years !!} Years Job experience</strong><br>
                         <i class="glyphicon glyphicon-envelope"></i> {!! $jobSeeker->email !!}
                         <br />

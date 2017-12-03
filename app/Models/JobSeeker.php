@@ -52,6 +52,12 @@ use Illuminate\Support\Carbon;
  *          description="tribe",
  *          type="string"
  *      ),
+ * 
+ *      @SWG\Property(
+ *          property="current_location",
+ *          description="current_location",
+ *          type="string"
+ *      ),
  *      @SWG\Property(
  *          property="photo",
  *          description="photo",
@@ -131,6 +137,7 @@ class JobSeeker extends Model
         'date_of_birth',
         'gender',
         'education_level',
+        'current_location',
         'tribe',
         'photo',
         'national_id',
@@ -155,6 +162,7 @@ class JobSeeker extends Model
         'date_of_birth' => 'date',
         'gender' => 'string',
         'education_level' => 'string',
+        'current_location' => 'string',
         'tribe' => 'string',
         'photo' => 'string',
         'national_id' => 'string',

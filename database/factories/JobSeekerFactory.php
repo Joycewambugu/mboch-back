@@ -10,6 +10,7 @@ $factory->define(App\Models\JobSeeker::class, function (Faker $faker) {
         'date_of_birth' => $faker->date("Y-m-d 00:00:00"),
         'gender' => $faker->randomElement($array = array ('male', 'female')),
         'education_level' =>  $faker->randomElement($array = array ('primary', 'secondary','college','university')),
+        'current_location' =>  $faker->city,
         'tribe' =>  $faker->randomElement($array = array ('Dahalo','Digo','Duruma','Edo','El Molo','Embu','Garreh-Ajuran','Giryama','Kalenjin','Kamba','Kikuyu','Kisii','Kuria','Luhya','Luo','Masai','Meru','Mijikenda','Ogiek','Rendille','Samburu','Somali','Swahili','Taita','Teso','Tharaka','Turkana','Yaaku')),
         'photo' => $faker->imageUrl($width = 640, $height = 480),
         'national_id' => $faker->randomNumber(8),

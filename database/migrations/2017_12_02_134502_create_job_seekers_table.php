@@ -21,6 +21,7 @@ class CreateJobSeekersTable extends Migration
             $table->date('date_of_birth');
             $table->string('gender');
             $table->string('education_level');
+            $table->string('current_location');
             $table->string('tribe');
             $table->string('photo');
             $table->string('national_id');

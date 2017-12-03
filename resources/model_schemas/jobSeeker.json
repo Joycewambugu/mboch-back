@@ -77,6 +77,17 @@
         "inIndex": true
     },
     {
+        "name": "current_location",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true
+    },
+    {
         "name": "tribe",
         "dbType": "string",
         "htmlType": "text",

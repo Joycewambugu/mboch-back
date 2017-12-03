@@ -31,7 +31,7 @@
 
 <!-- Gender Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('gender', 'Gender:') !!}
+    {!! Form::label('gender', 'Gender:') !!}<br/>
     <label class="radio-inline">
         {!! Form::radio('gender', "male", null) !!} male
     </label>
@@ -48,6 +48,17 @@
     {!! Form::select('education_level', ['primary' => 'primary', 'secondary' => 'secondary', 'college' => 'college', 'university' => 'university'], null, ['class' => 'form-control']) !!}
 </div>
 
+<!-- Experience Years Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('experience_years', 'Experience Years:') !!}
+    {!! Form::number('experience_years', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Tribe Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('current_location', 'Current Location (City or town):') !!}
+    {!! Form::text('current_location', null, ['class' => 'form-control']) !!}
+</div>
 <!-- Tribe Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('tribe', 'Tribe:') !!}
@@ -60,11 +71,6 @@
     {!! Form::text('national_id', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Experience Years Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('experience_years', 'Experience Years:') !!}
-    {!! Form::number('experience_years', null, ['class' => 'form-control']) !!}
-</div>
 
 <!-- Spoken Languages Field -->
 <div class="form-group col-sm-6">
