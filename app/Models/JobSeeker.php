@@ -180,8 +180,13 @@ class JobSeeker extends Model
 
     public function age()
     {
-        return Carbon::parse($this->date_of_birth)->diff(Carbon::now())->format("%y years, %m month old");
+        return Carbon::parse($this->date_of_birth)->diff(Carbon::now())->format("%y years and %m months old");
         // return $this->date_of_birth->diff(Carbon::now())->format('%y years, %m months and %d days');
+    }
+
+    public function getAgeAttribute()
+    {
+        return Carbon::parse($this->date_of_birth)->diff(Carbon::now())->format("%y");
     }
 
     // public function setDateOfBirthAttribute( $value ) {
