@@ -6,6 +6,205 @@
     },
     "basePath": "/api/v1",
     "paths": {
+        "/jobSeekers": {
+            "get": {
+                "tags": [
+                    "JobSeeker"
+                ],
+                "summary": "Get a listing of the JobSeekers.",
+                "description": "Get all JobSeekers",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/JobSeeker"
+                                    }
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "JobSeeker"
+                ],
+                "summary": "Store a newly created JobSeeker in storage",
+                "description": "Store JobSeeker",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "JobSeeker that should be stored",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/JobSeeker"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/JobSeeker"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/jobSeekers/{id}": {
+            "get": {
+                "tags": [
+                    "JobSeeker"
+                ],
+                "summary": "Display the specified JobSeeker",
+                "description": "Get JobSeeker",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of JobSeeker",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/JobSeeker"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "JobSeeker"
+                ],
+                "summary": "Update the specified JobSeeker in storage",
+                "description": "Update JobSeeker",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of JobSeeker",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "JobSeeker that should be updated",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/JobSeeker"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/JobSeeker"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "JobSeeker"
+                ],
+                "summary": "Remove the specified JobSeeker from storage",
+                "description": "Delete JobSeeker",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of JobSeeker",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "string"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
         "/subscriptionPlans": {
             "get": {
                 "tags": [
@@ -207,6 +406,97 @@
         }
     },
     "definitions": {
+        "JobSeeker": {
+            "required": [
+                "name",
+                "email",
+                "phone"
+            ],
+            "properties": {
+                "id": {
+                    "description": "id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "name": {
+                    "description": "name",
+                    "type": "string"
+                },
+                "email": {
+                    "description": "email",
+                    "type": "string"
+                },
+                "phone": {
+                    "description": "phone",
+                    "type": "string"
+                },
+                "date_of_birth": {
+                    "description": "date_of_birth",
+                    "type": "string",
+                    "format": "date"
+                },
+                "gender": {
+                    "description": "gender",
+                    "type": "string"
+                },
+                "education_level": {
+                    "description": "education_level",
+                    "type": "string"
+                },
+                "tribe": {
+                    "description": "tribe",
+                    "type": "string"
+                },
+                "photo": {
+                    "description": "photo",
+                    "type": "string"
+                },
+                "national_id": {
+                    "description": "national_id",
+                    "type": "string"
+                },
+                "experience_years": {
+                    "description": "experience_years",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "spoken_languages": {
+                    "description": "spoken_languages",
+                    "type": "string"
+                },
+                "religion": {
+                    "description": "religion",
+                    "type": "string"
+                },
+                "employment_status": {
+                    "description": "employment_status",
+                    "type": "string"
+                },
+                "marital_status": {
+                    "description": "marital_status",
+                    "type": "string"
+                },
+                "max_children": {
+                    "description": "max_children",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "health_conditions": {
+                    "description": "health_conditions",
+                    "type": "string"
+                },
+                "created_at": {
+                    "description": "created_at",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updated_at": {
+                    "description": "updated_at",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
         "SubscriptionPlan": {
             "required": [
                 "name",
