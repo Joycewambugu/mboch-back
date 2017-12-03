@@ -18,6 +18,7 @@ class JobSeekerController extends AppBaseController
 
     public function __construct(JobSeekerRepository $jobSeekerRepo)
     {
+        $this->middleware('auth');
         $this->jobSeekerRepository = $jobSeekerRepo;
     }
 
