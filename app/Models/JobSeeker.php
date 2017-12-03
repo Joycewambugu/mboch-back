@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Carbon;
 
 /**
  * @SWG\Definition(
@@ -118,8 +119,9 @@ class JobSeeker extends Model
 
     public $table = 'job_seekers';
     
+    // protected $dateFormat = 'Y-m-d';
 
-    protected $dates = ['deleted_at'];
+    protected $dates = ['created_at', 'updated_at','deleted_at','date_of_birth'];
 
 
     public $fillable = [
@@ -150,7 +152,7 @@ class JobSeeker extends Model
         'name' => 'string',
         'email' => 'string',
         'phone' => 'string',
-        // 'date_of_birth' => 'date',
+        'date_of_birth' => 'date',
         'gender' => 'string',
         'education_level' => 'string',
         'tribe' => 'string',
@@ -175,6 +177,21 @@ class JobSeeker extends Model
         'email' => 'required',
         'phone' => 'required'
     ];
+
+    public function age()
+    {
+        return Carbon::parse($this->date_of_birth)->diff(Carbon::now())->format("%y years, %m month old");
+        // return $this->date_of_birth->diff(Carbon::now())->format('%y years, %m months and %d days');
+    }
+
+    // public function setDateOfBirthAttribute( $value ) {
+    //     $this->attributes['date_of_birth'] = (new Carbon($value))->format('Y-m-d');
+    //   }
+      public function getDateOfBirthAttribute( $value ) {
+        return Carbon::parse($value)->format('Y-m-d');
+      }
+
+
 
     
 }
