@@ -447,6 +447,10 @@
                     "description": "tribe",
                     "type": "string"
                 },
+                "current_location": {
+                    "description": "current_location",
+                    "type": "string"
+                },
                 "photo": {
                     "description": "photo",
                     "type": "string"
