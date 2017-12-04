@@ -7,7 +7,7 @@
 <li class="{{ Request::is('jobSeekers*') ? 'active' : '' }}">
     <a href="{!! route('jobSeekers.index') !!}"><i class="fa fa-edit"></i><span>Job Seekers</span></a>
 </li>
-<li class="{{ Request::is('jobSeekers*') ? 'active' : '' }}">
+<li class="{{ Request::is('passport*') ? 'active' : '' }}">
     <a href="{!! route('passport') !!}"><i class="fa fa-edit"></i><span>Mobile app clients</span></a>
 </li>
 
