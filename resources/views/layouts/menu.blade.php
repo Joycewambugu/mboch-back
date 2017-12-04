@@ -11,3 +11,7 @@
     <a href="{!! route('passport') !!}"><i class="fa fa-edit"></i><span>Mobile app clients</span></a>
 </li>
 
+<li class="{{ Request::is('employers*') ? 'active' : '' }}">
+    <a href="{!! route('employers.index') !!}"><i class="fa fa-edit"></i><span>Employers</span></a>
+</li>
+

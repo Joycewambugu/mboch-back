@@ -31,3 +31,5 @@ Route::resource('subscriptionPlans', 'SubscriptionPlanController');
 
 
 Route::resource('jobSeekers', 'JobSeekerController');
+
+Route::resource('employers', 'EmployerController');
