@@ -12,12 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    
+    
+    return File::get(public_path() . '/index.html');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin', 'HomeController@index')->name('home');
 Route::get('/passport', function ()
 {
     return view('passport_components');
