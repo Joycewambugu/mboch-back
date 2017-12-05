@@ -19,3 +19,7 @@
     <a href="{!! route('jobSeekerExperiences.index') !!}"><i class="fa fa-edit"></i><span>Job Seeker Experiences</span></a>
 </li>
 
+<li class="{{ Request::is('jobSeekerReferees*') ? 'active' : '' }}">
+    <a href="{!! route('jobSeekerReferees.index') !!}"><i class="fa fa-edit"></i><span>Job Seeker Referees</span></a>
+</li>
+

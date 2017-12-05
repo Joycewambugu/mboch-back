@@ -25,3 +25,5 @@ Route::resource('jobSeekers', 'API\JobSeekerAPIController');
 Route::resource('employers', 'API\EmployerAPIController');
 
 Route::resource('jobSeekerExperiences', 'API\JobSeekerExperienceAPIController');
+
+Route::resource('jobSeekerReferees', 'API\JobSeekerRefereeAPIController');
