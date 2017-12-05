@@ -18,6 +18,7 @@ class SubscriptionPlanController extends AppBaseController
 
     public function __construct(SubscriptionPlanRepository $subscriptionPlanRepo)
     {
+        $this->middleware('auth');
         $this->subscriptionPlanRepository = $subscriptionPlanRepo;
     }
 

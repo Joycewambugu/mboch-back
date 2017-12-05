@@ -18,6 +18,7 @@ class EmployerController extends AppBaseController
 
     public function __construct(EmployerRepository $employerRepo)
     {
+        $this->middleware('auth');
         $this->employerRepository = $employerRepo;
     }
 
