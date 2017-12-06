@@ -6,6 +6,205 @@
     },
     "basePath": "/api/v1",
     "paths": {
+        "/employers": {
+            "get": {
+                "tags": [
+                    "Employer"
+                ],
+                "summary": "Get a listing of the Employers.",
+                "description": "Get all Employers",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/Employer"
+                                    }
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Employer"
+                ],
+                "summary": "Store a newly created Employer in storage",
+                "description": "Store Employer",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Employer that should be stored",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/Employer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Employer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/employers/{id}": {
+            "get": {
+                "tags": [
+                    "Employer"
+                ],
+                "summary": "Display the specified Employer",
+                "description": "Get Employer",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Employer",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Employer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Employer"
+                ],
+                "summary": "Update the specified Employer in storage",
+                "description": "Update Employer",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Employer",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Employer that should be updated",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/Employer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Employer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Employer"
+                ],
+                "summary": "Remove the specified Employer from storage",
+                "description": "Delete Employer",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Employer",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "string"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
         "/jobSeekers": {
             "get": {
                 "tags": [
@@ -180,6 +379,404 @@
                         "name": "id",
                         "in": "path",
                         "description": "id of JobSeeker",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "string"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/jobSeekerExperiences": {
+            "get": {
+                "tags": [
+                    "JobSeekerExperience"
+                ],
+                "summary": "Get a listing of the JobSeekerExperiences.",
+                "description": "Get all JobSeekerExperiences",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/JobSeekerExperience"
+                                    }
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "JobSeekerExperience"
+                ],
+                "summary": "Store a newly created JobSeekerExperience in storage",
+                "description": "Store JobSeekerExperience",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "JobSeekerExperience that should be stored",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/JobSeekerExperience"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/JobSeekerExperience"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/jobSeekerExperiences/{id}": {
+            "get": {
+                "tags": [
+                    "JobSeekerExperience"
+                ],
+                "summary": "Display the specified JobSeekerExperience",
+                "description": "Get JobSeekerExperience",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of JobSeekerExperience",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/JobSeekerExperience"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "JobSeekerExperience"
+                ],
+                "summary": "Update the specified JobSeekerExperience in storage",
+                "description": "Update JobSeekerExperience",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of JobSeekerExperience",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "JobSeekerExperience that should be updated",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/JobSeekerExperience"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/JobSeekerExperience"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "JobSeekerExperience"
+                ],
+                "summary": "Remove the specified JobSeekerExperience from storage",
+                "description": "Delete JobSeekerExperience",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of JobSeekerExperience",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "string"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/jobSeekerReferees": {
+            "get": {
+                "tags": [
+                    "JobSeekerReferee"
+                ],
+                "summary": "Get a listing of the JobSeekerReferees.",
+                "description": "Get all JobSeekerReferees",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/JobSeekerReferee"
+                                    }
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "JobSeekerReferee"
+                ],
+                "summary": "Store a newly created JobSeekerReferee in storage",
+                "description": "Store JobSeekerReferee",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "JobSeekerReferee that should be stored",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/JobSeekerReferee"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/JobSeekerReferee"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/jobSeekerReferees/{id}": {
+            "get": {
+                "tags": [
+                    "JobSeekerReferee"
+                ],
+                "summary": "Display the specified JobSeekerReferee",
+                "description": "Get JobSeekerReferee",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of JobSeekerReferee",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/JobSeekerReferee"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "JobSeekerReferee"
+                ],
+                "summary": "Update the specified JobSeekerReferee in storage",
+                "description": "Update JobSeekerReferee",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of JobSeekerReferee",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "JobSeekerReferee that should be updated",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/JobSeekerReferee"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/JobSeekerReferee"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "JobSeekerReferee"
+                ],
+                "summary": "Remove the specified JobSeekerReferee from storage",
+                "description": "Delete JobSeekerReferee",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of JobSeekerReferee",
                         "required": true,
                         "type": "integer"
                     }
@@ -406,6 +1003,79 @@
         }
     },
     "definitions": {
+        "Employer": {
+            "required": [
+                "name",
+                "email",
+                "phone"
+            ],
+            "properties": {
+                "id": {
+                    "description": "id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "name": {
+                    "description": "name",
+                    "type": "string"
+                },
+                "photo": {
+                    "description": "photo",
+                    "type": "string"
+                },
+                "email": {
+                    "description": "email",
+                    "type": "string"
+                },
+                "phone": {
+                    "description": "phone",
+                    "type": "string"
+                },
+                "current_location": {
+                    "description": "current_location",
+                    "type": "string"
+                },
+                "tribe": {
+                    "description": "tribe",
+                    "type": "string"
+                },
+                "spoken_languages": {
+                    "description": "spoken_languages",
+                    "type": "string"
+                },
+                "religion": {
+                    "description": "religion",
+                    "type": "string"
+                },
+                "family_structure": {
+                    "description": "family_structure",
+                    "type": "string"
+                },
+                "house_size": {
+                    "description": "house_size",
+                    "type": "string"
+                },
+                "no_of_children": {
+                    "description": "no_of_children",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "help_hours": {
+                    "description": "help_hours",
+                    "type": "string"
+                },
+                "created_at": {
+                    "description": "created_at",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updated_at": {
+                    "description": "updated_at",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
         "JobSeeker": {
             "required": [
                 "name",
@@ -488,6 +1158,111 @@
                 "health_conditions": {
                     "description": "health_conditions",
                     "type": "string"
+                },
+                "created_at": {
+                    "description": "created_at",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updated_at": {
+                    "description": "updated_at",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
+        "JobSeekerExperience": {
+            "required": [
+                "job_seeker_id"
+            ],
+            "properties": {
+                "id": {
+                    "description": "id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "job_seeker_id": {
+                    "description": "job_seeker_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "start_date": {
+                    "description": "start_date",
+                    "type": "string",
+                    "format": "date"
+                },
+                "end_date": {
+                    "description": "end_date",
+                    "type": "string",
+                    "format": "date"
+                },
+                "location": {
+                    "description": "location",
+                    "type": "string"
+                },
+                "family_type": {
+                    "description": "family_type",
+                    "type": "string"
+                },
+                "no_of_children": {
+                    "description": "no_of_children",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "employer_name": {
+                    "description": "employer_name",
+                    "type": "string"
+                },
+                "employer_contact": {
+                    "description": "employer_contact",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "description",
+                    "type": "string"
+                },
+                "created_at": {
+                    "description": "created_at",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updated_at": {
+                    "description": "updated_at",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
+        "JobSeekerReferee": {
+            "required": [
+                "job_seeker_id"
+            ],
+            "properties": {
+                "id": {
+                    "description": "id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "job_seeker_id": {
+                    "description": "job_seeker_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "name": {
+                    "description": "name",
+                    "type": "string"
+                },
+                "address": {
+                    "description": "address",
+                    "type": "string"
+                },
+                "phone": {
+                    "description": "phone",
+                    "type": "string"
+                },
+                "confirmed": {
+                    "description": "confirmed",
+                    "type": "boolean"
                 },
                 "created_at": {
                     "description": "created_at",
