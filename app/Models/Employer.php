@@ -4,11 +4,12 @@ namespace App\Models;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\App;
 
 /**
  * @SWG\Definition(
  *      definition="Employer",
- *      required={"name", "email", "phone"},
+ *      required={"user_id"},
  *      @SWG\Property(
  *          property="id",
  *          description="id",
@@ -16,23 +17,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *          format="int32"
  *      ),
  *      @SWG\Property(
- *          property="name",
- *          description="name",
- *          type="string"
+ *          property="user_id",
+ *          description="user_id",
+ *          type="integer",
+ *          format="int32"
  *      ),
  *      @SWG\Property(
  *          property="photo",
  *          description="photo",
- *          type="string"
- *      ),
- *      @SWG\Property(
- *          property="email",
- *          description="email",
- *          type="string"
- *      ),
- *      @SWG\Property(
- *          property="phone",
- *          description="phone",
  *          type="string"
  *      ),
  *      @SWG\Property(
@@ -101,10 +93,8 @@ class Employer extends Model
 
 
     public $fillable = [
-        'name',
+        'user_id',
         'photo',
-        'email',
-        'phone',
         'current_location',
         'tribe',
         'spoken_languages',
@@ -121,10 +111,8 @@ class Employer extends Model
      * @var array
      */
     protected $casts = [
-        'name' => 'string',
+        'user_id'=> 'integer',
         'photo' => 'string',
-        'email' => 'string',
-        'phone' => 'string',
         'current_location' => 'string',
         'tribe' => 'string',
         'spoken_languages' => 'string',
@@ -141,10 +129,13 @@ class Employer extends Model
      * @var array
      */
     public static $rules = [
-        'name' => 'required',
-        'email' => 'required',
-        'phone' => 'required'
+        'user_id' => 'required'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(\App\User::class);
+    }
 
     
 }
