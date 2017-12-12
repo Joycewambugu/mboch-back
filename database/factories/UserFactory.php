@@ -20,6 +20,7 @@ $factory->define(App\User::class, function (Faker $faker) {
         'name' => $faker->name,
         'phone' => $faker->unique()->PhoneNumber,
         'email' => $faker->unique()->safeEmail,
+        'user_type'=> $faker->randomElement($array = array ('employer', 'job_seeker','admin')),
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
     ];
