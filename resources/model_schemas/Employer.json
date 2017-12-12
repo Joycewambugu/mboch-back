@@ -11,6 +11,17 @@
         "inIndex": false
     },
     {
+        "name": "user_id",
+        "dbType": "integer",
+        "htmlType": "select",
+        "validations": "required",
+        "searchable": false,
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": true
+    },
+    {
         "name": "name",
         "dbType": "string",
         "htmlType": "text",

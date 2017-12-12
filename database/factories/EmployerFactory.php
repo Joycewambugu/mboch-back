@@ -4,6 +4,9 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Models\Employer::class, function (Faker $faker) {
     return [
+        'user_id'=> function(){ 
+            return factory(\App\User::class)->create()->id; 
+        },
         'name' => $faker->name,
         'photo' => $faker->imageUrl($width = 640, $height = 480),
         'email' => $faker->email,

@@ -20,6 +20,7 @@ class EmployerRepository extends BaseRepository
      * @var array
      */
     protected $fieldSearchable = [
+        'user_id',
         'name',
         'photo',
         'email',

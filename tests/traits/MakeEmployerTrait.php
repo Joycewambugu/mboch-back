@@ -42,6 +42,9 @@ trait MakeEmployerTrait
         $faker = Faker::create();
 
         return array_merge([
+            'user_id'=> function(){ 
+                return factory(\App\User::class)->create()->id; 
+            },
             'name' => $faker->name,
             'photo' => $faker->imageUrl($width = 640, $height = 480),
             'email' => $faker->email,
@@ -54,8 +57,6 @@ trait MakeEmployerTrait
             'house_size' => $faker->word,
             'no_of_children' => $faker->randomDigitNotNull,
             'help_hours' => $faker->word,
-            // 'created_at' => $fake->word,
-            // 'updated_at' => $fake->word
         ], $employerFields);
     }
 }
