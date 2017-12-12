@@ -217,5 +217,16 @@ class JobSeeker extends Model
       {
           return $this->belongsTo(\App\User::class);
       }  
+      
+      public function experience()
+      {
+          return $this->hasMany(\App\Models\JobSeekerExperience::class);
+      }  
+
+      public function referees()
+      {
+          return $this->hasMany(\App\Models\JobSeekerReferee::class);
+      }  
+
     
 }
