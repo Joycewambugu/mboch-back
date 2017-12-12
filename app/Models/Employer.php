@@ -95,6 +95,9 @@ class Employer extends Model
     public $fillable = [
         'user_id',
         'photo',
+        'name',
+        'email',
+        'phone',        
         'current_location',
         'tribe',
         'spoken_languages',
