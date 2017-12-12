@@ -39,14 +39,6 @@ trait MakeJobSeekerRefereeTrait
      */
     public function fakeJobSeekerRefereeData($jobSeekerRefereeFields = [])
     {
-        $fake = Faker::create();
-
-        return array_merge([
-            'job_seeker_id' => $fake->randomDigitNotNull,
-            'name' => $fake->name,
-            'address' => $fake->city,
-            'phone' => $fake->PhoneNumber,
-            'confirmed' => $fake->boolean
-        ], $jobSeekerRefereeFields);
+        return factory(App\Models\JobSeekerReferee::class)->make($jobSeekerRefereeFields)->toArray();
     }
 }

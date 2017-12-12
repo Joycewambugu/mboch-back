@@ -39,13 +39,6 @@ trait MakeSubscriptionPlanTrait
      */
     public function fakeSubscriptionPlanData($subscriptionPlanFields = [])
     {
-        $fake = Faker::create();
-
-        return array_merge([
-            'name' => $fake->word,
-            'description' => $fake->text,
-            'price' => $fake->randomDigitNotNull,
-            'search_limit' => $fake->randomDigitNotNull
-        ], $subscriptionPlanFields);
+        return factory(App\Models\SubscriptionPlan::class)->make($subscriptionPlanFields)->toArray();
     }
 }

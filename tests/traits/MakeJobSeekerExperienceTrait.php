@@ -39,20 +39,6 @@ trait MakeJobSeekerExperienceTrait
      */
     public function fakeJobSeekerExperienceData($jobSeekerExperienceFields = [])
     {
-        $fake = Faker::create();
-
-        return array_merge([
-            'job_seeker_id' => $fake->randomDigitNotNull,
-            'start_date' => $fake->date,
-            'end_date' => $fake->date,
-            'location' => $fake->word,
-            'family_type' => $fake->word,
-            'no_of_children' => $fake->randomDigitNotNull,
-            'employer_name' => $fake->word,
-            'employer_contact' => $fake->word,
-            'description' => $fake->text,
-            // 'created_at' => $fake->word,
-            // 'updated_at' => $fake->word
-        ], $jobSeekerExperienceFields);
+        return factory(App\Models\JobSeekerExperience::class)->make($jobSeekerExperienceFields)->toArray();
     }
 }
