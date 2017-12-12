@@ -20,6 +20,7 @@ class JobSeekerRepository extends BaseRepository
      * @var array
      */
     protected $fieldSearchable = [
+        'user_id',
         'name',
         'email',
         'phone',

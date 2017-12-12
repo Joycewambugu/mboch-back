@@ -9,10 +9,16 @@ use Illuminate\Support\Carbon;
 /**
  * @SWG\Definition(
  *      definition="JobSeeker",
- *      required={"name", "email", "phone"},
+ *      required={"user_id", "name", "email", "phone"},
  *      @SWG\Property(
  *          property="id",
  *          description="id",
+ *          type="integer",
+ *          format="int32"
+ *      ),
+ *      @SWG\Property(
+ *          property="user_id",
+ *          description="USer Id",
  *          type="integer",
  *          format="int32"
  *      ),
@@ -131,6 +137,7 @@ class JobSeeker extends Model
 
 
     public $fillable = [
+        'user_id',
         'name',
         'email',
         'phone',
@@ -156,6 +163,7 @@ class JobSeeker extends Model
      * @var array
      */
     protected $casts = [
+        'user_id' => 'integer',
         'name' => 'string',
         'email' => 'string',
         'phone' => 'string',
@@ -181,6 +189,7 @@ class JobSeeker extends Model
      * @var array
      */
     public static $rules = [
+        'user_id' => 'required',
         'name' => 'required',
         'email' => 'required',
         'phone' => 'required'
@@ -204,7 +213,9 @@ class JobSeeker extends Model
         return Carbon::parse($value)->format('Y-m-d');
       }
 
-
-
+      public function user()
+      {
+          return $this->belongsTo(\App\User::class);
+      }  
     
 }

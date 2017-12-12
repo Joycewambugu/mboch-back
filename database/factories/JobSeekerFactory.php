@@ -4,10 +4,13 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Models\JobSeeker::class, function (Faker $faker) {
     return [
+        'user_id'=> function(){ 
+            return factory(\App\User::class)->create(['user_type'=>'job_seeker'])->id; 
+        },
         'name' => $faker->name,
         'email' => $faker->unique()->email,
         'phone' => $faker->unique()->PhoneNumber,
-        'date_of_birth' => $faker->date("Y-m-d 00:00:00"),
+        'date_of_birth' => $faker->date,
         'gender' => $faker->randomElement($array = array ('male', 'female')),
         'education_level' =>  $faker->randomElement($array = array ('primary', 'secondary','college','university')),
         'current_location' =>  $faker->city,
