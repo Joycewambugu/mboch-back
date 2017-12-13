@@ -11,6 +11,12 @@ class JobSeekersTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Models\JobSeeker::class, 10)->create();
+        factory(\App\Models\JobSeeker::class, 10)->create()
+        ->each(function ($jobSeeker) {
+            factory(App\Models\JobSeekerReferee::class,3)
+            ->create(['job_seeker_id' => $jobSeeker->id]);
+            factory(App\Models\JobSeekerExperience::class,random_int(1,5))
+            ->create(['job_seeker_id' => $jobSeeker->id]);
+        });
     }
 }
