@@ -34,7 +34,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a href="{{ url('/home') }}"><b>M</b>boch</a>
+        <a href="{{ url('/home') }}"><b>T</b>oday<b>N</b>anny</a>
     </div>
 
     <!-- /.login-logo -->
