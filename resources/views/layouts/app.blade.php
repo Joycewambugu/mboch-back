@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Mboch</title>
+    <title>TodayNanny</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -27,7 +27,7 @@
 
             <!-- Logo -->
             <a href="#" class="logo">
-                <b>Mboch</b>
+                <b>TodayNanny</b>
             </a>
 
             <!-- Header Navbar -->
@@ -110,7 +110,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{!! url('/') !!}">
-                   Mboch
+                   TodayNanny
                 </a>
             </div>
 

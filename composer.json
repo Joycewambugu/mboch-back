@@ -1,7 +1,7 @@
 {
     "name": "morrismukiri/mboch-back",
     "description": "Backend to the House help discovery",
-    "keywords": ["Mboch", "househelp"],
+    "keywords": ["TodayNanny", "househelp"],
     "license": "MIT",
     "type": "project",
     "require": {
