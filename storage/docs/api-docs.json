@@ -1005,9 +1005,7 @@
     "definitions": {
         "Employer": {
             "required": [
-                "name",
-                "email",
-                "phone"
+                "user_id"
             ],
             "properties": {
                 "id": {
@@ -1015,20 +1013,13 @@
                     "type": "integer",
                     "format": "int32"
                 },
-                "name": {
-                    "description": "name",
-                    "type": "string"
+                "user_id": {
+                    "description": "user_id",
+                    "type": "integer",
+                    "format": "int32"
                 },
                 "photo": {
                     "description": "photo",
-                    "type": "string"
-                },
-                "email": {
-                    "description": "email",
-                    "type": "string"
-                },
-                "phone": {
-                    "description": "phone",
                     "type": "string"
                 },
                 "current_location": {
@@ -1078,6 +1069,7 @@
         },
         "JobSeeker": {
             "required": [
+                "user_id",
                 "name",
                 "email",
                 "phone"
@@ -1085,6 +1077,11 @@
             "properties": {
                 "id": {
                     "description": "id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "user_id": {
+                    "description": "USer Id",
                     "type": "integer",
                     "format": "int32"
                 },
