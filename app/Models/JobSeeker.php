@@ -138,9 +138,9 @@ class JobSeeker extends Model
 
     public $fillable = [
         'user_id',
-        'name',
-        'email',
-        'phone',
+        // 'name',
+        // 'email',
+        // 'phone',
         'date_of_birth',
         'gender',
         'education_level',
@@ -164,9 +164,9 @@ class JobSeeker extends Model
      */
     protected $casts = [
         'user_id' => 'integer',
-        'name' => 'string',
-        'email' => 'string',
-        'phone' => 'string',
+        // 'name' => 'string',
+        // 'email' => 'string',
+        // 'phone' => 'string',
         'date_of_birth' => 'date',
         'gender' => 'string',
         'education_level' => 'string',
