@@ -190,9 +190,9 @@ class JobSeeker extends Model
      */
     public static $rules = [
         'user_id' => 'required',
-        'name' => 'required',
-        'email' => 'required',
-        'phone' => 'required'
+        // 'name' => 'required',
+        // 'email' => 'required',
+        // 'phone' => 'required'
     ];
 
     public function age()
