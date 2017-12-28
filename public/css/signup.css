@@ -15,10 +15,11 @@ html {
 
 body {
 	font-family: montserrat, arial, verdana;
+	background: inherit;
 }
 /*form styles*/
 #msform {
-	width: 400px;
+	width: 720px;
 	margin: 50px auto;
 	text-align: center;
 	position: relative;
@@ -129,6 +130,7 @@ body {
 	background: #27AE60;
 	color: white;
 }
-
-
-
+ .register-box {
+    width: 720px;
+    margin: 0 auto;
+}

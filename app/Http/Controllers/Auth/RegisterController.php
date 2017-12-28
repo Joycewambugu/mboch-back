@@ -68,6 +68,7 @@ class RegisterController extends Controller
             'phone' => $data['phone'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'user_type' => $data['user_type']?$data['user_type']:'job_seeker',
         ]);
     }
 }
