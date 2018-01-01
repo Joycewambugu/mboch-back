@@ -33,7 +33,7 @@
     </div>
 
 <!-- multistep form -->
-<form id="msform">
+<form id="msform" action="" method="post">
   <!-- progressbar -->
   <ul id="progressbar">
     <li class="active">Account Setup</li>

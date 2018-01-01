@@ -71,16 +71,16 @@
     </div>
     <input type="date" name="date_of_birth" placeholder="date of birth" />
     <div class="form-group col-sm-12">
-        <label class="" for="education_level">
-    Highest Level of education: 
-    </label>
-    <select name="education_level" id="education_level">
-        <option value="primary">Primary</option>
-        <option value="secondary">Secondary</option>
-        <option value="college">College</option>
-        <option value="university">University</option>
-    </select>
-</div>
+            <label class="" for="education_level">
+        Highest Level of education: 
+        </label>
+        <select name="education_level" id="education_level">
+            <option value="primary">Primary</option>
+            <option value="secondary">Secondary</option>
+            <option value="college">College</option>
+            <option value="university">University</option>
+        </select>
+    </div>
     <input type="text" name="current_location" placeholder="current location" />
     <input type="text" name="tribe" placeholder="tribe" />
     <!-- <input type="text" name="photo" placeholder="photo" /> -->
@@ -90,6 +90,8 @@
     <input type="button" name="next" class="next action-button" value="Next" />
     </fieldset>
     <fieldset>
+            <h2 class="fs-title">We want to know more about you</h2>
+        <h3 class="fs-subtitle">More details to help you get the perfect job</h3>
     <input type="text" name="experience_years" placeholder="experience years" />
     <input type="text" name="spoken_languages" placeholder="spoken languages" />
     <input type="text" name="religion" placeholder="religion" />
