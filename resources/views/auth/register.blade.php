@@ -71,7 +71,7 @@
     </div>
     <input type="date" name="date_of_birth" placeholder="date of birth" />
     <div class="form-group col-sm-12">
-            <label class="" for="education_level">
+            <label class="edu_level" for="education_level">
         Highest Level of education: 
         </label>
         <select name="education_level" id="education_level">
