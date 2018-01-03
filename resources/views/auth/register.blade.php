@@ -38,7 +38,8 @@
                 </div>
                 </div>
 <!-- multistep form -->
-<form id="msform" >
+<form id="msform"  method="post" action="{{ url('/register') }}">
+    {!! csrf_field() !!}
   <!-- progressbar -->
   <ul id="progressbar">
     <li class="active">Account Setup</li>
@@ -49,7 +50,18 @@
   <fieldset>
     <h2 class="fs-title">Create your account</h2>
     <h3 class="fs-subtitle">This is step 1</h3>
-    <input type="tel" name="name  " placeholder="Your official names" />
+    <div class="form-group has-feedback{{ $errors->has('name') ? ' has-error' : '' }}">
+        <input type="text" name="name  " placeholder="Your official names" />
+    
+        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+
+        @if ($errors->has('name'))
+            <span class="help-block">
+                <strong>{{ $errors->first('name') }}</strong>
+            </span>
+        @endif
+    </div>
+
     <input type="tel" name="phone  " placeholder="Your phone number" />
     <input type="text" name="email" placeholder="Email" />
     <input type="password" name="password" placeholder="Password" />
@@ -87,9 +99,10 @@
     <input type="text" name="national_id" placeholder="national id" />
 
     <input type="button" name="previous" class="previous action-button" value="Previous" />
-    <input type="button" name="next" class="next action-button" value="Next" />
+    {{--  <input type="button" name="next" class="next action-button" value="Next" />  --}}
+    <input type="submit" name="submit" class="submit action-button" value="Submit" />
     </fieldset>
-    <fieldset>
+    {{--  <fieldset>
             <h2 class="fs-title">We want to know more about you</h2>
         <h3 class="fs-subtitle">More details to help you get the perfect job</h3>
     <input type="text" name="experience_years" placeholder="experience years" />
@@ -101,8 +114,8 @@
     <input type="text" name="health_conditions" placeholder="health conditions" />
 
     <input type="button" name="previous" class="previous action-button" value="Previous" />
-    <input type="submit" name="submit" class="submit action-button" value="Submit" />
-  </fieldset>
+    
+  </fieldset>  --}}
 </form>
  <script src='js/jquery-2.2.4.min.js'></script>
  <script src="js/bootstrap.min.js"></script>
