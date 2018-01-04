@@ -44,28 +44,55 @@
   <ul id="progressbar">
     <li class="active">Account Setup</li>
     <li>Personal Details</li>
-    <li>Extra Details</li>
+    <li>Finish</li>
   </ul>
   <!-- fieldsets -->
   <fieldset>
     <h2 class="fs-title">Create your account</h2>
     <h3 class="fs-subtitle">This is step 1</h3>
     <div class="form-group has-feedback{{ $errors->has('name') ? ' has-error' : '' }}">
-        <input type="text" name="name  " placeholder="Your official names" />
-    
-        <span class="glyphicon glyphicon-user form-control-feedback"></span>
-
         @if ($errors->has('name'))
             <span class="help-block">
                 <strong>{{ $errors->first('name') }}</strong>
             </span>
         @endif
+        <input type="text" name="name  " placeholder="Your official names" />
+
+        
     </div>
 
-    <input type="tel" name="phone  " placeholder="Your phone number" />
-    <input type="text" name="email" placeholder="Email" />
-    <input type="password" name="password" placeholder="Password" />
-    <input type="password" name="password_confirmation" placeholder="Confirm Password" />
+    <div class="form-group has-feedback{{ $errors->has('phone') ? ' has-error' : '' }}">
+        @if ($errors->has('phone'))
+            <span class="help-block">
+                <strong>{{ $errors->first('phone') }}</strong>
+            </span>
+        @endif
+        <input type="tel" name="phone  " placeholder="Your phone number" />
+    </div>
+    <div class="form-group has-feedback{{ $errors->has('email') ? ' has-error' : '' }}">
+        @if ($errors->has('email'))
+            <span class="help-block">
+                <strong>{{ $errors->first('email') }}</strong>
+            </span>
+        @endif
+        <input type="text" name="email" placeholder="Email" />
+    </div>
+    <div class="form-group has-feedback{{ $errors->has('password') ? ' has-error' : '' }}">
+        @if ($errors->has('password'))
+            <span class="help-block">
+                <strong>{{ $errors->first('password') }}</strong>
+            </span>
+        @endif
+        <input type="password" name="password" placeholder="Password" />
+    </div>
+    <div class="form-group has-feedback{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
+        @if ($errors->has('password_confirmation'))
+            <span class="help-block">
+                <strong>{{ $errors->first('password_confirmation') }}</strong>
+            </span>
+        @endif
+        <input type="password" name="password_confirmation" placeholder="Confirm Password" />
+    </div>
     <input type="button" name="next" class="next action-button" value="Next" />
   </fieldset>
   <fieldset>
@@ -99,23 +126,29 @@
     <input type="text" name="national_id" placeholder="national id" />
 
     <input type="button" name="previous" class="previous action-button" value="Previous" />
-    {{--  <input type="button" name="next" class="next action-button" value="Next" />  --}}
-    <input type="submit" name="submit" class="submit action-button" value="Submit" />
+    <input type="button" name="next" class="next action-button" value="Next" />
+   
     </fieldset>
-    {{--  <fieldset>
-            <h2 class="fs-title">We want to know more about you</h2>
-        <h3 class="fs-subtitle">More details to help you get the perfect job</h3>
-    <input type="text" name="experience_years" placeholder="experience years" />
+    <fieldset>
+            <h2 class="fs-title">Terms</h2>
+        <h3 class="fs-subtitle">Just one more thing</h3>
+        <div class="checkbox icheck">
+                <label>
+                    <input type="checkbox"> I agree to the <a href="#">terms</a>
+                </label>
+            </div>
+    {{--  <input type="text" name="experience_years" placeholder="experience years" />
     <input type="text" name="spoken_languages" placeholder="spoken languages" />
     <input type="text" name="religion" placeholder="religion" />
     <input type="text" name="employment_status" placeholder="employment status" />
     <input type="text" name="marital_status" placeholder="marital status" />
     <input type="text" name="max_children" placeholder="max children" />
-    <input type="text" name="health_conditions" placeholder="health conditions" />
+    <input type="text" name="health_conditions" placeholder="health conditions" />  --}}
 
     <input type="button" name="previous" class="previous action-button" value="Previous" />
+    <input type="submit" name="submit" class="submit action-button" value="Submit" />
     
-  </fieldset>  --}}
+  </fieldset>
 </form>
  <script src='js/jquery-2.2.4.min.js'></script>
  <script src="js/bootstrap.min.js"></script>
