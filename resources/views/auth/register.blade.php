@@ -99,26 +99,40 @@
     <h2 class="fs-title">Personal Details</h2>
     <h3 class="fs-subtitle">Some information about yourself</h3>
     <div class="form-group col-sm-12">
-       <label for="gender"> Gender:         
-        <label class="radio-inline">
-            <input type="radio" name="gender" value="male"  /> male
-        </label>
-    
-        <label class="radio-inline">
-            <input type="radio" name="gender" value="male" /> female
-        </label>
+        <div class="form-group has-feedback{{ $errors->has('gender') ? ' has-error' : '' }}">
+            @if ($errors->has('gender'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('gender') }}</strong>
+                </span>
+            @endif
+            <label for="gender"> Gender:         
+                <label class="radio-inline">
+                    <input type="radio" name="gender" value="male"  /> male
+                </label>
+            
+                <label class="radio-inline">
+                    <input type="radio" name="gender" value="male" /> female
+                </label>
+            </label>
+        </div>
     </div>
     <input type="date" name="date_of_birth" placeholder="date of birth" />
     <div class="form-group col-sm-12">
-            <label class="edu_level" for="education_level">
-        Highest Level of education: 
-        </label>
-        <select name="education_level" id="education_level">
-            <option value="primary">Primary</option>
-            <option value="secondary">Secondary</option>
-            <option value="college">College</option>
-            <option value="university">University</option>
-        </select>
+        <div class="form-group has-feedback{{ $errors->has('education_level') ? ' has-error' : '' }}">
+          
+            <label class="edu_level" for="education_level">Highest Level of education:</label>
+            <select name="education_level" id="education_level">
+                <option value="primary">Primary</option>
+                <option value="secondary">Secondary</option>
+                <option value="college">College</option>
+                <option value="university">University</option>
+            </select>
+            @if ($errors->has('education_level'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('education_level') }}</strong>
+                </span>
+            @endif
+        </div>
     </div>
     <input type="text" name="current_location" placeholder="current location" />
     <input type="text" name="tribe" placeholder="tribe" />
@@ -157,9 +171,6 @@
   
 
     <script  src="js/signup.js"></script>
-
-
-
 
 </body>
 
