@@ -56,7 +56,7 @@
                 <strong>{{ $errors->first('name') }}</strong>
             </span>
         @endif
-        <input type="text" name="name  " placeholder="Your official names" />
+        <input type="text" name="name" placeholder="Your official names" />
 
         
     </div>
@@ -67,7 +67,7 @@
                 <strong>{{ $errors->first('phone') }}</strong>
             </span>
         @endif
-        <input type="tel" name="phone  " placeholder="Your phone number" />
+        <input type="tel" name="phone" placeholder="Your phone number" />
     </div>
     <div class="form-group has-feedback{{ $errors->has('email') ? ' has-error' : '' }}">
         @if ($errors->has('email'))

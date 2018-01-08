@@ -6,6 +6,7 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Models\JobSeeker;
 
 class RegisterController extends Controller
 {
@@ -63,12 +64,36 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+         $user = User::create([
             'name' => $data['name'],
             'phone' => $data['phone'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'user_type' => $data['user_type']?$data['user_type']:'job_seeker',
+            'user_type' => isset($data['user_type'])?$data['user_type']:'job_seeker',
         ]);
+
+        $job_seeker = new JobSeeker([
+        'name'=> $data['name'],
+        'email'=> $data['email'],
+        'phone'=> $data['phone'],
+        'date_of_birth' => $data['date_of_birth'],
+        'gender' => $data['gender'],
+        'education_level' => $data['education_level'],
+        'current_location' => $data['current_location'],
+        'tribe' => $data['tribe'],
+        // 'photo' => isset($data['photo'])?$data['photo']:NULL,
+        'national_id' => $data['national_id'],
+        // 'experience_years' => $data['experience_years'],
+        // 'spoken_languages' => $data['spoken_languages'],
+        // 'religion' => $data['religion'],
+        // 'employment_status' => $data['employment_status'],
+        // 'marital_status' => $data['marital_status'],
+        // 'max_children' => $data['max_children'],
+        // 'health_conditions' => $data['health_conditions']
+        ]);
+
+        $user->jobSeeker()->save($job_seeker);
+
+        return $user;
     }
 }
