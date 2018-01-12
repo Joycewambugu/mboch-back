@@ -10,39 +10,7 @@
         "inForm": false,
         "inIndex": false
     },
-    {
-        "name": "name",
-        "dbType": "string",
-        "htmlType": "text",
-        "validations": "required",
-        "searchable": true,
-        "fillable": true,
-        "primary": false,
-        "inForm": true,
-        "inIndex": true
-    },
-    {
-        "name": "email",
-        "dbType": "string:unique",
-        "htmlType": "email",
-        "validations": "required",
-        "searchable": true,
-        "fillable": true,
-        "primary": false,
-        "inForm": true,
-        "inIndex": true
-    },
-    {
-        "name": "phone",
-        "dbType": "string:unique",
-        "htmlType": "tel",
-        "validations": "required",
-        "searchable": true,
-        "fillable": true,
-        "primary": false,
-        "inForm": true,
-        "inIndex": true
-    },
+  
     {
         "name": "date_of_birth",
         "dbType": "date",

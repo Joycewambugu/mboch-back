@@ -16,10 +16,10 @@ class CreateEmployersTable extends Migration
         Schema::create('employers', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->string('name')->nullable();
+            // $table->string('name')->nullable();
+            // $table->string('email')->unique();
+            // $table->string('phone')->unique();
             $table->string('photo')->nullable();
-            $table->string('email')->unique();
-            $table->string('phone')->unique();
             $table->string('current_location')->nullable();
             $table->string('tribe')->nullable();
             $table->string('spoken_languages')->nullable();

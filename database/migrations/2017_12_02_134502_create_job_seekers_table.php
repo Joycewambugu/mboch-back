@@ -16,9 +16,9 @@ class CreateJobSeekersTable extends Migration
         Schema::create('job_seekers', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unique();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('phone')->unique();
+            // $table->string('name');
+            // $table->string('email')->unique();
+            // $table->string('phone')->unique();
             $table->date('date_of_birth')->nullable();
             $table->string('gender')->nullable();
             $table->string('education_level')->nullable();

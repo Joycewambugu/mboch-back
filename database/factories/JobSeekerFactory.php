@@ -7,9 +7,9 @@ $factory->define(App\Models\JobSeeker::class, function (Faker $faker) {
         'user_id'=> function(){ 
             return factory(\App\User::class)->create(['user_type'=>'job_seeker'])->id; 
         },
-        'name' => $faker->name,
-        'email' => $faker->unique()->email,
-        'phone' => $faker->unique()->PhoneNumber,
+        // 'name' => $faker->name,
+        // 'email' => $faker->unique()->email,
+        // 'phone' => $faker->unique()->PhoneNumber,
         'date_of_birth' => $faker->date,
         'gender' => $faker->randomElement($array = array ('male', 'female')),
         'education_level' =>  $faker->randomElement($array = array ('primary', 'secondary','college','university')),

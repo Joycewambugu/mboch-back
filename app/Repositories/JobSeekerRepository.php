@@ -21,9 +21,9 @@ class JobSeekerRepository extends BaseRepository
      */
     protected $fieldSearchable = [
         'user_id',
-        'name',
-        'email',
-        'phone',
+        // 'name',
+        // 'email',
+        // 'phone',
         'date_of_birth',
         'gender',
         'education_level',

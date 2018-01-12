@@ -135,9 +135,9 @@
         </div>
     </div>
     <input type="text" name="current_location" placeholder="current location" />
-    <input type="text" name="tribe" placeholder="tribe" />
+    {{--  <input type="text" name="tribe" placeholder="tribe" />  --}}
     <!-- <input type="text" name="photo" placeholder="photo" /> -->
-    <input type="text" name="national_id" placeholder="national id" />
+    {{--  <input type="text" name="national_id" placeholder="national id" />  --}}
 
     <input type="button" name="previous" class="previous action-button" value="Previous" />
     <input type="button" name="next" class="next action-button" value="Next" />

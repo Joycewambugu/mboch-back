@@ -64,9 +64,9 @@ class JobSeekerDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'name',
-            'email',
-            'phone',
+            // 'name',
+            // 'email',
+            // 'phone',
             'date_of_birth',
             // 'gender',
             'education_level',

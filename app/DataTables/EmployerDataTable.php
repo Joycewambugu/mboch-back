@@ -64,10 +64,10 @@ class EmployerDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'name',
+            // 'name',
             // 'photo',
-            'email',
-            'phone',
+            // 'email',
+            // 'phone',
             'current_location',
             'tribe',
             'spoken_languages',

@@ -21,10 +21,10 @@ class EmployerRepository extends BaseRepository
      */
     protected $fieldSearchable = [
         'user_id',
-        'name',
+        // 'name',
+        // 'email',
+        // 'phone',
         'photo',
-        'email',
-        'phone',
         'current_location',
         'tribe',
         'spoken_languages',

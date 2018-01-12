@@ -73,16 +73,16 @@ class RegisterController extends Controller
         ]);
 
         $job_seeker = new JobSeeker([
-        'name'=> $data['name'],
-        'email'=> $data['email'],
-        'phone'=> $data['phone'],
+        // 'name'=> $data['name'],
+        // 'email'=> $data['email'],
+        // 'phone'=> $data['phone'],
         'date_of_birth' => $data['date_of_birth'],
         'gender' => $data['gender'],
         'education_level' => $data['education_level'],
         'current_location' => $data['current_location'],
-        'tribe' => $data['tribe'],
+        // 'tribe' => $data['tribe'],
         // 'photo' => isset($data['photo'])?$data['photo']:NULL,
-        'national_id' => $data['national_id'],
+        // 'national_id' => $data['national_id'],
         // 'experience_years' => $data['experience_years'],
         // 'spoken_languages' => $data['spoken_languages'],
         // 'religion' => $data['religion'],
