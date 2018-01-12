@@ -7,25 +7,26 @@
 <!-- Name Field -->
 <div class="form-group">
     {!! Form::label('name', 'Name:') !!}
-    <p>{!! $employer->name !!}</p>
+    <p>{!! $employer->user->name !!}</p>
 </div>
+
 
 <!-- Photo Field -->
 <div class="form-group">
     {!! Form::label('photo', 'Photo:') !!}
-    <p>{!! $employer->photo !!}</p>
+    <p><img sr="{!! $employer->photo !!}" name="photo"/></p>
 </div>
 
 <!-- Email Field -->
 <div class="form-group">
     {!! Form::label('email', 'Email:') !!}
-    <p>{!! $employer->email !!}</p>
+    <p>{!! $employer->user->email !!}</p>
 </div>
 
 <!-- Phone Field -->
 <div class="form-group">
     {!! Form::label('phone', 'Phone:') !!}
-    <p>{!! $employer->phone !!}</p>
+    <p>{!! $employer->user->phone !!}</p>
 </div>
 
 <!-- Current Location Field -->

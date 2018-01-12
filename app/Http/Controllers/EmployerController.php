@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\DataTables\EmployerDataTable;
-use App\Http\Requests;
 use App\Http\Requests\CreateEmployerRequest;
 use App\Http\Requests\UpdateEmployerRequest;
 use App\Repositories\EmployerRepository;
-use Flash;
 use App\Http\Controllers\AppBaseController;
+use Illuminate\Http\Request;
+use Flash;
+use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 
 class EmployerController extends AppBaseController
@@ -25,12 +25,16 @@ class EmployerController extends AppBaseController
     /**
      * Display a listing of the Employer.
      *
-     * @param EmployerDataTable $employerDataTable
+     * @param Request $request
      * @return Response
      */
-    public function index(EmployerDataTable $employerDataTable)
+    public function index(Request $request)
     {
-        return $employerDataTable->render('employers.index');
+        $this->employerRepository->pushCriteria(new RequestCriteria($request));
+        $employers = $this->employerRepository->all();
+
+        return view('employers.index')
+            ->with('employers', $employers);
     }
 
     /**

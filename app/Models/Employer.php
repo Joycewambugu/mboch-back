@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Support\Facades\App;
 
 /**
  * @SWG\Definition(
@@ -93,11 +92,7 @@ class Employer extends Model
 
 
     public $fillable = [
-        'user_id',
         'photo',
-        // 'name',
-        // 'email',
-        // 'phone',        
         'current_location',
         'tribe',
         'spoken_languages',
@@ -114,7 +109,7 @@ class Employer extends Model
      * @var array
      */
     protected $casts = [
-        'user_id'=> 'integer',
+        'user_id' => 'integer',
         'photo' => 'string',
         'current_location' => 'string',
         'tribe' => 'string',
@@ -139,6 +134,6 @@ class Employer extends Model
     {
         return $this->belongsTo(\App\User::class);
     }
-
+    
     
 }

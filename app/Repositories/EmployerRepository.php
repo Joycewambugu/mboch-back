@@ -8,7 +8,7 @@ use InfyOm\Generator\Common\BaseRepository;
 /**
  * Class EmployerRepository
  * @package App\Repositories
- * @version December 4, 2017, 5:40 pm UTC
+ * @version January 12, 2018, 10:33 am UTC
  *
  * @method Employer findWithoutFail($id, $columns = ['*'])
  * @method Employer find($id, $columns = ['*'])
@@ -20,10 +20,6 @@ class EmployerRepository extends BaseRepository
      * @var array
      */
     protected $fieldSearchable = [
-        'user_id',
-        // 'name',
-        // 'email',
-        // 'phone',
         'photo',
         'current_location',
         'tribe',
