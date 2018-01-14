@@ -23,21 +23,6 @@ use Illuminate\Support\Carbon;
  *          format="int32"
  *      ),
  *      @SWG\Property(
- *          property="name",
- *          description="name",
- *          type="string"
- *      ),
- *      @SWG\Property(
- *          property="email",
- *          description="email",
- *          type="string"
- *      ),
- *      @SWG\Property(
- *          property="phone",
- *          description="phone",
- *          type="string"
- *      ),
- *      @SWG\Property(
  *          property="date_of_birth",
  *          description="date_of_birth",
  *          type="string",
@@ -194,7 +179,7 @@ class JobSeeker extends Model
         // 'email' => 'required',
         // 'phone' => 'required'
     ];
-
+ 
     public function age()
     {
         return Carbon::parse($this->date_of_birth)->diff(Carbon::now())->format("%y years and %m months old");
@@ -206,9 +191,6 @@ class JobSeeker extends Model
         return Carbon::parse($this->date_of_birth)->diff(Carbon::now())->format("%y");
     }
 
-    // public function setDateOfBirthAttribute( $value ) {
-    //     $this->attributes['date_of_birth'] = (new Carbon($value))->format('Y-m-d');
-    //   }
       public function getDateOfBirthAttribute( $value ) {
         return Carbon::parse($value)->format('Y-m-d');
       }
