@@ -92,6 +92,7 @@ class Employer extends Model
 
 
     public $fillable = [
+        'user_id',
         'photo',
         'current_location',
         'tribe',
