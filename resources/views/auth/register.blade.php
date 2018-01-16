@@ -19,6 +19,8 @@
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css" rel="stylesheet">
 
   
       <link rel="stylesheet" href="css/signup.css">
@@ -105,7 +107,7 @@
                     <strong>{{ $errors->first('gender') }}</strong>
                 </span>
             @endif
-            <label for="gender"> Gender:         
+            {{--  <label for="gender"> Gender:         
                 <label class="radio-inline">
                     <input type="radio" name="gender" value="male"  /> male
                 </label>
@@ -113,11 +115,32 @@
                 <label class="radio-inline">
                     <input type="radio" name="gender" value="male" /> female
                 </label>
-            </label>
+            </label>  --}}
+            {{--  <div class="row">  --}}
+                <div class="col-xs-12">
+                  <br> Gender:
+                  <br>
+                  <div class="btn-group btn-group-horizontal" data-toggle="buttons">
+                    <label class="btn active">
+                      <input type="radio" name='gender' checked><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> <span>  Male</span>
+                    </label>
+                    <label class="btn">
+                      <input type="radio" name='gender'><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span> Female</span>
+                    </label>
+                  </div>
+            
+                </div>
+            </div>
         </div>
-    </div>
-    <input type="date" name="date_of_birth" placeholder="date of birth" />
-    <div class="form-group col-sm-12">
+        <label>Date of Birth: </label>
+        <div class="input-group date" data-provide="datepicker" id="datepicker">
+            <input type="text" class="form-control" name="date_of_birth" >
+            <div class="input-group-addon">
+                <span class="glyphicon glyphicon-th"></span>
+            </div>
+        </div>
+    
+    {{--  <div class="form-group col-sm-12">
         <div class="form-group has-feedback{{ $errors->has('education_level') ? ' has-error' : '' }}">
           
             <label class="edu_level" for="education_level">Highest Level of education:</label>
@@ -133,7 +156,7 @@
                 </span>
             @endif
         </div>
-    </div>
+    </div>  --}}
     <input type="text" name="current_location" placeholder="current location" />
     {{--  <input type="text" name="tribe" placeholder="tribe" />  --}}
     <!-- <input type="text" name="photo" placeholder="photo" /> -->
@@ -165,13 +188,21 @@
   </fieldset>
 </form>
  <script src='js/jquery-2.2.4.min.js'></script>
+ <script src="js/popper.min.js"></script>
  <script src="js/bootstrap.min.js"></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
   
 
     <script  src="js/signup.js"></script>
-
+<script>
+        $(function () {
+            $("#datepicker").datepicker({
+                format: 'yyyy-mm-dd',
+                endDate: '-18y'
+            });
+        });
+</script>
 </body>
 
 </html>
